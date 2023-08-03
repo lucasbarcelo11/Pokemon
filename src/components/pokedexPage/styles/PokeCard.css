@@ -1,0 +1,16 @@
+.pokecard {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 0.7em;
+    border: 0.7em solid #ccc;
+}
+.pokecard__header {
+    background-color: #999;
+    aspect-ratio: 2;
+    position: relative;
+}
+.pokecard__image {
+    position: absolute;
+    width: 60%;
+    
+}
