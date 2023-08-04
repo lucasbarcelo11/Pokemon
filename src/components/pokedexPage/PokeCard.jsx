@@ -16,18 +16,19 @@ const PokeCard = ({ url }) => {
     navigate(`/pokedex/${pokemon.id}`)
   }
 
+  const firstype = pokemon?.types[0].type.name
 
 
   return (
-    <article className="pokecard" onClick={handleClick}>
-      <header className="pokecard__header">
+    <article className={`pokecard ${firstype}-border`} onClick={handleClick}>
+      <header className={`pokecard__header ${firstype}-gradient`}>
         <img className="pokecard__image"
           src={pokemon?.sprites.other["official-artwork"].front_default}
           alt=""
         />
       </header>
       <section className="pokecard__body">
-        <h3 className="pokecard__name">{pokemon?.name}</h3>
+        <h3 className={`pokecard__name ${firstype}-color`}>{pokemon?.name}</h3>
         <ul className="pokecard__types">
           {pokemon?.types.map((typeInfo) => (
             <li className="pokecard__typename" key={typeInfo.type.url}>{typeInfo.type.name}</li>
@@ -39,7 +40,7 @@ const PokeCard = ({ url }) => {
             pokemon?.stats.map(statInfo => (
               <li className="pokecard__stat" key={statInfo.stat.url}>
                 <h4 className="pokecard__stat__name">{statInfo.stat.name}</h4>
-                <span className="pokecard__stat__value">{statInfo.base_stat}</span>
+                <span className={`pokecard__stat__value ${firstype}-color`}>{statInfo.base_stat}</span>
               </li>
             ))
           }
