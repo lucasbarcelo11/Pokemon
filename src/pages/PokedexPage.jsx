@@ -16,7 +16,7 @@ const PokedexPage = () => {
   const [ pokemons, getAllPokemons, getPokemonsByType ] = useFetch(url)
 
   useEffect(() => {
-    if(selectValue === 'allPokemons') {
+    if(selectValue === 'allPokemons' ) {
       getAllPokemons()
     } else {
       getPokemonsByType(selectValue)
@@ -31,6 +31,7 @@ const PokedexPage = () => {
     setInputValue(inputSearch.current.value.trim().toLowerCase())
   }
 
+
   const cbFilter = poke => poke.name.includes(inputValue)
 
 
@@ -40,11 +41,11 @@ const PokedexPage = () => {
         <span>Welcome {trainer}</span>, here you can find your favorite pokemon
       </p>
       <form onSubmit={handleSubmit}>
-        <input ref={inputSearch} type="text" />
+        <input ref={inputSearch} onChange={(e) => setInputValue(e.target.value)} type="text" />
         <button>Search</button>
       </form>
-      <div>
       <SelectType setSelectValue={setSelectValue}/>
+      <div>
         {
           pokemons?.results.filter(cbFilter).map(poke => (
             <PokeCard

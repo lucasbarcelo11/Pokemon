@@ -19,8 +19,8 @@ const PokeIdPage = () => {
 
   return (
     <article> 
-      <img src={pokemon?.sprites.other["official-artwork"].front_default} alt="" />
-      <h2>{pokemon.name}</h2>
+      <img src={pokemon?.sprites?.other["official-artwork"]?.front_default} alt="" />
+      <h2>{pokemon?.name}</h2>
     </article>
   )
 }

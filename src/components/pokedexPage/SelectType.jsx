@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch";
 const SelectType = ({setSelectValue}) => {
 
 
-  const url = "https://pokeapi.co/api/v2/type";
+  const url = "https://pokeapi.co/api/v2/type"
   const [ types, getAllTypes ] = useFetch(url)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const SelectType = ({setSelectValue}) => {
     <select onChange={handleChange}>
       <option value="allPokemons">All Pokemons</option>
     {
-        types?.results.map(type =>(
+        types?.results.map(type => (
             <option key={type.url} value={type.url}>{type.name}</option>
         ))
     }
