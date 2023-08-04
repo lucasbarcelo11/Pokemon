@@ -18,7 +18,7 @@ ul {
     list-style: none;
 }
 img{
-    width: 100%;
+    /* width: 100%; */
     display: block;
 }
 input{
@@ -29,4 +29,10 @@ button{
     font-family: inherit;
     border: none;
     cursor: pointer;
+}
+.grids{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(300px, auto);
 }
