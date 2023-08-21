@@ -36,3 +36,10 @@ button{
     grid-gap: 20px;
     grid-auto-rows: minmax(300px, auto);
 }
+
+@media (max-width:600px){
+    body{
+        display: flex;
+        align-items: center;
+    }
+}
